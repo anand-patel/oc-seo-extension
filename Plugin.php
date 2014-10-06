@@ -29,14 +29,23 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'AnandPatel\SeoExtension\Components\SeoExtension' => 'SeoExtension',
+            'AnandPatel\SeoExtension\Components\StaticPage' => 'StaticPage',
             'AnandPatel\SeoExtension\Components\CmsPage' => 'CmsPage',
+            'AnandPatel\SeoExtension\Components\BlogPost' => 'BlogPost',
         ];
     }
 
 
     public function register()
     {
+
+//        Event::listen('rainlab.blog.post', function($user){
+//
+//            // Code to register $user->email to mailing list
+//
+//        });
+
+
         \Event::listen('backend.form.extendFields', function($widget)
         {
 
