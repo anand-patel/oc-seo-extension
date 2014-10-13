@@ -19,9 +19,9 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'SEO Extension',
-            'description' => 'This Plugin provide SEO Extension to October CMS Pages',
+            'description' => 'Provide SEO Extension to October CMS Pages, Static Pages, Blog post',
             'author'      => 'AnandPatel',
-            'icon'        => 'icon-leaf'
+            'icon'        => 'icon-search'
         ];
     }
 
@@ -29,22 +29,15 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'AnandPatel\SeoExtension\Components\StaticPage' => 'StaticPage',
-            'AnandPatel\SeoExtension\Components\CmsPage' => 'CmsPage',
-            'AnandPatel\SeoExtension\Components\BlogPost' => 'BlogPost',
+            'AnandPatel\SeoExtension\Components\BlogPost' => 'SeoBlogPost',
+            'AnandPatel\SeoExtension\Components\StaticPage' => 'SeoStaticPage',
+            'AnandPatel\SeoExtension\Components\CmsPage' => 'SeoCmsPage',
         ];
     }
 
 
     public function register()
     {
-
-//        Event::listen('rainlab.blog.post', function($user){
-//
-//            // Code to register $user->email to mailing list
-//
-//        });
-
 
         \Event::listen('backend.form.extendFields', function($widget)
         {
