@@ -1,3 +1,5 @@
 1.0.1:
       - First version of Seo Extension
       - create_blog_posts_table.php
+1.0.2:
+      - bug fixes

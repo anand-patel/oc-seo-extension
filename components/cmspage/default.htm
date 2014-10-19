@@ -7,22 +7,23 @@
 {% else %}
 
     {% if __SELF__.redirect_url %}
-    <meta http-equiv="refresh" content="0; url={{__SELF__.redirect_url}}" />
+        <meta http-equiv="refresh" content="0; url={{__SELF__.redirect_url}}" />
     {% endif %}
 
     {% if __SELF__.seo_title %}
-    <title>{{__SELF__.seo_title}}</title>
+        <title>{{__SELF__.seo_title}}</title>
     {% endif %}
+
     {% if __SELF__.seo_description %}
-    <meta name="description" content="{{__SELF__.seo_description}}">
+        <meta name="description" content="{{__SELF__.seo_description}}">
     {% endif %}
 
     {% if __SELF__.seo_keywords %}
-    <meta name="keywords" content="{{__SELF__.seo_keywords}}">
+        <meta name="keywords" content="{{__SELF__.seo_keywords}}">
     {% endif %}
 
     {% if __SELF__.canonical_url %}
-    <link rel="canonical" href="{{__SELF__.canonical_url}}" />
+        <link rel="canonical" href="{{__SELF__.canonical_url}}" />
     {% endif %}
 
     <meta name="robots" content="{{__SELF__.robot_index}},{{__SELF__.robot_follow}}">

@@ -15,6 +15,7 @@ class StaticPage extends ComponentBase
     public $redirect_url;
     public $robot_index;
     public $robot_follow;
+    public $title;
 
     public function componentDetails()
     {
@@ -40,6 +41,7 @@ class StaticPage extends ComponentBase
 
         if ($this->page) {
             $this->seo_title = $this->page['seo_title'] = $this->page->getViewBag()->property('seo_title');
+            $this->title = $this->page['title'] = $this->page->getViewBag()->property('title');
             $this->seo_description = $this->page['seo_description'] = $this->page->getViewBag()->property('seo_description');
             $this->seo_keywords = $this->page['seo_keywords'] = $this->page->getViewBag()->property('seo_keywords');
             $this->canonical_url = $this->page['canonical_url'] = $this->page->getViewBag()->property('canonical_url');
