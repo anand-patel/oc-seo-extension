@@ -4,6 +4,8 @@ use System\Classes\PluginBase;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use System\Classes\PluginManager;
+use System\Classes\SettingsManager;
+
 /**
  * SeoExtension Plugin Information File
  */
@@ -33,6 +35,22 @@ class Plugin extends PluginBase
             'AnandPatel\SeoExtension\Components\StaticPage' => 'SeoStaticPage',
             'AnandPatel\SeoExtension\Components\CmsPage' => 'SeoCmsPage',
         ];
+    }
+
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => 'SEO Extension',
+                'description' => 'Configure SEO Extension',
+                'icon'        => 'icon-search',
+                'context'     => 'mysettings',
+                'category'    =>  SettingsManager::CATEGORY_MYSETTINGS,
+                'class'       => 'AnandPatel\SeoExtension\Models\Settings',
+                'order'       => 100
+            ]
+        ];
+
     }
 
 
@@ -148,8 +166,6 @@ class Plugin extends PluginBase
                     ],
                     'secondary');
             }
-
-
 
             if (!$widget->model instanceof \Cms\Classes\Page) return;
 

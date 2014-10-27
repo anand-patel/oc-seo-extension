@@ -1,0 +1,40 @@
+tabs:
+  fields:
+      enable_title:
+        label: Use Prefix or suffix site name in Title Tag
+        type: switch
+        span: left
+        comment: if Canonical URL is not Provided then use Default URL as Canonical URL
+        tab: Settings
+
+      site_title:
+        label: Site Title
+        commentAbove: Prefix or suffix site name in Title Tag
+        span: right
+        comment: e.g Wysiwyg Editors |
+        tab: Settings
+
+      activate_mode:
+        label: Title should appear at prefix or suffix
+        type: radio
+        span: right
+        tab: Settings
+        options:
+            prefix: Prefix
+            suffix: Suffix
+
+      enable_canonical_url:
+        label: Use Default URL as Canonical URL
+        type: switch
+        comment: if Canonical URL is not Provided then use Default URL as Canonical URL
+        tab: Settings
+        span: left
+
+
+      enable_og_tag:
+        label: Enable Open Graph(og) Tags
+        type: switch
+        tab: Open Graph
+
+
+
