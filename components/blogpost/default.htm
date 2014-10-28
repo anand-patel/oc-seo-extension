@@ -21,10 +21,15 @@
     {% endif %}
 
     {% if post.canonical_url %}
-        <link rel="canonical" href="{{post.canonical_url | generateCanonicalUrl}}" />
+        <link rel="canonical" href="{{post.canonical_url}}" />
     {% else %}
-        <link rel="canonical" href="{{ '' | generateCanonicalUrl}}" />
+        {{ '' | generateCanonicalUrl}}
     {% endif %}
 
         <meta name="robots" content="{{post.robot_index}},{{post.robot_follow}}">
+
+    {{ ''|otherMetaTags|raw }}
+
+    {{ post|generateOgTags }}
 {% endput %}
+

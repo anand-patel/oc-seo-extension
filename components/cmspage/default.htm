@@ -16,8 +16,8 @@
 
     {% if __SELF__.seo_description %}
         <meta name="description" content="{{__SELF__.seo_description}}">
-    {% endif %}
 
+{% endif %}
     {% if __SELF__.seo_keywords %}
         <meta name="keywords" content="{{__SELF__.seo_keywords}}">
     {% endif %}
@@ -29,4 +29,31 @@
     {% endif %}
 
     <meta name="robots" content="{{__SELF__.robot_index}},{{__SELF__.robot_follow}}">
+
+    {{ ''|otherMetaTags|raw }}
+
+
+    {% if __SELF__.ogTitle %}
+        <meta property="og:title" content="{{ __SELF__.ogTitle }}" />
+    {% endif %}
+
+    {% if __SELF__.ogUrl %}
+        <meta property="og:url" content="{{ __SELF__.ogUrl }}" />
+    {% endif %}
+
+    {% if __SELF__.ogSiteName %}
+        <meta property="og:site_name" content="{{ __SELF__.ogSiteName }}" />
+    {% endif %}
+
+    {% if __SELF__.ogDescription %}
+        <meta property="og:description" content="{{ __SELF__.ogDescription }}" />
+    {% endif %}
+
+    {% if __SELF__.ogFbAppId %}
+        <meta property="fb:app_id" content="{{ __SELF__.ogFbAppId  }}" />
+    {% endif %}
+
+
+
 {% endif %}
+

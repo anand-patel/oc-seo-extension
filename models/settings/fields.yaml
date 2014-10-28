@@ -1,49 +1,78 @@
 tabs:
   fields:
       enable_title:
-        label: Use prefix or suffix site title in Title tag
+        label: Use site name in title
+        comment: Enbale if you want to use site name in title tag
         type: switch
         span: left
-        comment: if canonical URL is not provided then use default URL as canonical URL
         tab: Settings
-
-      title:
-        label: Site title
-        commentAbove: Prefix or suffix site name in Title tag
-        span: right
-        comment: e.g SEO Extension | <other title>
-        tab: Settings
-
-      title_position:
-        label: Title appear at prefix or suffix
-        type: radio
-        span: right
-        tab: Settings
-        default: prefix
-        options:
-            prefix: Prefix
-            suffix: Suffix
 
       enable_canonical_url:
         label: Use default URL as canonical URL
         type: switch
         comment: if canonical URL is not provided then use default URL as canonical URL
         tab: Settings
+        span: right
+
+      title:
+        label: Site name
+        commentAbove: Prefix or suffix site name in title tag
         span: left
+        comment: Site name | <seo/page/blog title>
+        tab: Settings
+        placeholder: Sitename |
+
+      title_position:
+        label: Site name appear at
+        type: radio
+        span: right
+        tab: Settings
+        comment: select where site name should appear i.e. at start or at end
+        options:
+          prefix: Prefix (at start)
+          suffix: Suffix (at end)
 
 
-      enable_og_tag:
+      content:
+          type: hint
+          path: @/plugins/AnandPatel/SeoExtension/models/Settings/_other_tags_hint.htm
+          tab: Settings
+
+      other_tags:
+         label: Other meta tags
+         type: codeeditor
+         tab: Settings
+         commentAbove: Insert tags that you want to insert in all pages
+         comment: Insert other meta tags like meta author, meta viewport etc
+
+      og_tags_description:
+          type: hint
+          path: @/plugins/AnandPatel/SeoExtension/models/Settings/_og_tags_description.htm
+          tab: Open Graph
+
+
+      enable_og_tags:
         label: Enable Open Graph(og) Tags
         type: switch
         tab: Open Graph
 
 
-      favicon:
-        label: Favicon
-        type: fileupload
-        mode: image
-        imageHeight: 128
-        imageWidth: 128
-        tab: Settings
+      og_sitename:
+        label: Site name for Open Graph
+        type: text
+        comment: The name of your website. Not the URL, but the name. (i.e. "SEO Extension" not "seoextension.com".)
+        tab: Open Graph
+
+      og_fb_appid:
+        label: Facebook App Id
+        comment: The unique ID that lets Facebook know the identity of your site.
+        type: text
+        span: left
+        tab: Open Graph
+
+
+
+
+
 
 

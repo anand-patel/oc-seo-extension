@@ -46,6 +46,31 @@ class Helper {
         {
             return '<link rel="canonical" href="'. Request::url().'"/>';
         }
+
+        return "";
+    }
+
+    public function otherMetaTags()
+    {
+        $settings = $this->settings;
+
+        if($settings->other_tags)
+        {
+            return $settings->other_tags;
+        }
+
+        return "";
+
+    }
+
+    public function generateOgMetaTags($post)
+    {
+        $settings = $this->settings;
+
+        if($settings->enable_og_tags)
+        {
+
+        }
     }
 
 

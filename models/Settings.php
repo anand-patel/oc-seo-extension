@@ -17,7 +17,7 @@ class Settings extends Model{
     protected $cache = [];
 
     public $attachOne = [
-        'favicon' => ['System\Models\File']
+        'og_image' => ['System\Models\File']
     ];
 
 } 

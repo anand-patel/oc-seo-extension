@@ -59,9 +59,27 @@ class Plugin extends PluginBase
         return [
             'filters' => [
                 'generateTitle' => [$this, 'generateTitle'],
-                'generateCanonicalUrl' => [$this, 'generateCanonicalUrl']
+                'generateCanonicalUrl' => [$this, 'generateCanonicalUrl'],
+                'otherMetaTags' => [$this ,'otherMetaTags'],
+                'generateOgTags' => [$this,'generateOgTags']
             ]
         ];
+    }
+
+    public function generateOgTags($post)
+    {
+        $helper = new Helper();
+
+        $ogMetaTags = $helper->generateOgMetaTags($post);
+        return $ogMetaTags;
+    }
+
+    public function otherMetaTags()
+    {
+        $helper = new Helper();
+
+        $otherMetaTags = $helper->otherMetaTags();
+        return $otherMetaTags;
     }
 
     public function generateTitle($title)

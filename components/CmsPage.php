@@ -3,9 +3,9 @@
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
-use System\Classes\ApplicationException;
-use Cms\Classes\Controller;
-
+use Request;
+use AnandPatel\SeoExtension\models\Settings;
+use URL;
 
 class CmsPage extends ComponentBase
 {
@@ -18,6 +18,15 @@ class CmsPage extends ComponentBase
     public $robot_index;
     public $robot_follow;
     public $hasBlog;
+
+    public $ogTitle;
+    public $ogUrl;
+    public $ogDescription;
+    public $ogSiteName;
+    public $ogFbAppId;
+    public $ogLocale;
+    public $ogImage;
+
 
     public function componentDetails()
     {
@@ -47,6 +56,18 @@ class CmsPage extends ComponentBase
             $this->redirect_url = $this->page["redirect_url"] = $this->page->redirect_url;
             $this->robot_follow = $this->page["robot_follow"] = $this->page->robot_follow;
             $this->robot_index = $this->page["robot_index"] = $this->page->robot_index;
+
+            $settings = Settings::instance();
+
+            if($settings->enable_og_tags)
+            {
+                $this->ogTitle = empty($this->page->meta_title) ? $this->page->title : $this->page->meta_title;
+                $this->ogDescription = $this->page->meta_description;
+                $this->ogUrl = empty($this->page->canonical_url) ? Request::url() : $this->page->canonical_url ;
+                $this->ogSiteName = $settings->og_sitename;
+                $this->ogFbAppId = $settings->og_fb_appid;
+            }
+
         }
         else{
             $this->hasBlog = $this->page["hasBlog"] = true;
