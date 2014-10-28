@@ -5,6 +5,7 @@ use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use System\Classes\PluginManager;
 use System\Classes\SettingsManager;
+use AnandPatel\SeoExtension\classes\Helper;
 
 /**
  * SeoExtension Plugin Information File
@@ -51,6 +52,30 @@ class Plugin extends PluginBase
             ]
         ];
 
+    }
+
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'generateTitle' => [$this, 'generateTitle'],
+                'generateCanonicalUrl' => [$this, 'generateCanonicalUrl']
+            ]
+        ];
+    }
+
+    public function generateTitle($title)
+    {
+        $helper = new Helper();
+        $title = $helper->generateTitle($title);
+        return $title;
+    }
+
+    public function generateCanonicalUrl($url)
+    {
+        $helper = new Helper();
+        $canonicalUrl = $helper->generateCanonicalUrl();
+        return $canonicalUrl;
     }
 
 
@@ -115,7 +140,6 @@ class Plugin extends PluginBase
 
             if(PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof \RainLab\Blog\Models\Post)
             {
-                traceLog("sdfsdf");
                 $widget->addFields([
                         'seo_title' => [
                             'label'   => 'Meta Title',

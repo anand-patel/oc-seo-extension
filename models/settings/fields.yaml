@@ -1,32 +1,33 @@
 tabs:
   fields:
       enable_title:
-        label: Use Prefix or suffix site name in Title Tag
+        label: Use prefix or suffix site title in Title tag
         type: switch
         span: left
-        comment: if Canonical URL is not Provided then use Default URL as Canonical URL
+        comment: if canonical URL is not provided then use default URL as canonical URL
         tab: Settings
 
-      site_title:
-        label: Site Title
-        commentAbove: Prefix or suffix site name in Title Tag
+      title:
+        label: Site title
+        commentAbove: Prefix or suffix site name in Title tag
         span: right
-        comment: e.g Wysiwyg Editors |
+        comment: e.g SEO Extension | <other title>
         tab: Settings
 
-      activate_mode:
-        label: Title should appear at prefix or suffix
+      title_position:
+        label: Title appear at prefix or suffix
         type: radio
         span: right
         tab: Settings
+        default: prefix
         options:
             prefix: Prefix
             suffix: Suffix
 
       enable_canonical_url:
-        label: Use Default URL as Canonical URL
+        label: Use default URL as canonical URL
         type: switch
-        comment: if Canonical URL is not Provided then use Default URL as Canonical URL
+        comment: if canonical URL is not provided then use default URL as canonical URL
         tab: Settings
         span: left
 
@@ -36,5 +37,13 @@ tabs:
         type: switch
         tab: Open Graph
 
+
+      favicon:
+        label: Favicon
+        type: fileupload
+        mode: image
+        imageHeight: 128
+        imageWidth: 128
+        tab: Settings
 
 

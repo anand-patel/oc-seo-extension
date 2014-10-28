@@ -11,7 +11,7 @@
     {% endif %}
 
     {% if __SELF__.seo_title %}
-        <title>{{__SELF__.seo_title}}</title>
+        <title>{{__SELF__.seo_title | generateTitle}}</title>
     {% endif %}
 
     {% if __SELF__.seo_description %}
@@ -24,6 +24,8 @@
 
     {% if __SELF__.canonical_url %}
         <link rel="canonical" href="{{__SELF__.canonical_url}}" />
+    {% else %}
+        {{ '' | generateCanonicalUrl}}
     {% endif %}
 
     <meta name="robots" content="{{__SELF__.robot_index}},{{__SELF__.robot_follow}}">

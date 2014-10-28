@@ -3,26 +3,28 @@
 {% put meta %}
 {% default %}
     {% if post.redirect_url %}
-    <meta http-equiv="refresh" content="0; url={{post.redirect_url}}" />
+        <meta http-equiv="refresh" content="0; url={{post.redirect_url}}" />
     {% endif %}
 
     {% if post.seo_title %}
-    <title>{{post.seo_title}}</title>
+        <title>{{ post.seo_title | generateTitle}}</title>
     {% else %}
-    <title>{{ post.title }}</title>
+        <title>{{ post.title | generateTitle }}</title>
     {% endif %}
 
     {% if post.seo_description %}
-    <meta name="description" content="{{post.seo_description}}">
+        <meta name="description" content="{{post.seo_description}}">
     {% endif %}
 
     {% if post.seo_keywords %}
-    <meta name="keywords" content="{{post.seo_keywords}}">
+        <meta name="keywords" content="{{post.seo_keywords}}">
     {% endif %}
 
     {% if post.canonical_url %}
-    <link rel="canonical" href="{{post.canonical_url}}" />
+        <link rel="canonical" href="{{post.canonical_url | generateCanonicalUrl}}" />
+    {% else %}
+        <link rel="canonical" href="{{ '' | generateCanonicalUrl}}" />
     {% endif %}
 
-    <meta name="robots" content="{{post.robot_index}},{{post.robot_follow}}">
+        <meta name="robots" content="{{post.robot_index}},{{post.robot_follow}}">
 {% endput %}

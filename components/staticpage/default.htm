@@ -6,9 +6,9 @@
 {% endif %}
 
 {% if __SELF__.seo_title %}
-    <title>{{__SELF__.seo_title}}</title>
+    <title>{{__SELF__.seo_title | generateTitle }}</title>
 {% else %}
-    <title>{{ __SELF__.title }}</title>
+    <title>{{ __SELF__.title | generateTitle }}</title>
 {% endif %}
 
 {% if __SELF__.seo_description %}
@@ -21,6 +21,8 @@
 
 {% if __SELF__.canonical_url %}
     <link rel="canonical" href="{{__SELF__.canonical_url}}" />
+{% else %}
+    <link rel="canonical" href="{{ '' | generateCanonicalUrl}}" />
 {% endif %}
 
 <meta name="robots" content="{{__SELF__.robot_index}},{{__SELF__.robot_follow}}">
