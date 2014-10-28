@@ -3,3 +3,5 @@
       - create_blog_posts_table.php
 1.0.2:
       - bug fixes
+1.0.3:
+      - Backend Settings added to configure meta tags & Open Graph tags added
