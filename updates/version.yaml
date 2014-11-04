@@ -5,3 +5,5 @@
       - bug fixes
 1.0.3:
       - Backend Settings added to configure meta tags & Open Graph tags added
+1.0.4:
+      - code clean up and change path naming in settings model
