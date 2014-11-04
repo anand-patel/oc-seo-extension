@@ -67,8 +67,6 @@ class Helper {
     {
         $settings = $this->settings;
 
-        tracelog($post);
-
         if($settings->enable_og_tags)
         {
             $ogTags = "";
