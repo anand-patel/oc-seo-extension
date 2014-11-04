@@ -35,7 +35,7 @@ tabs:
 
       content:
           type: hint
-          path: @/plugins/AnandPatel/SeoExtension/models/Settings/_other_tags_hint.htm
+          path: @/plugins/anandpatel/seoextension/models/settings/_other_tags_hint.htm
           tab: Settings
 
       other_tags:
@@ -47,7 +47,7 @@ tabs:
 
       og_tags_description:
           type: hint
-          path: @/plugins/AnandPatel/SeoExtension/models/Settings/_og_tags_description.htm
+          path: @/plugins/anandpatel/seoextension/models/settings/_og_tags_description.htm
           tab: Open Graph
 
 
