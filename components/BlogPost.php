@@ -18,8 +18,8 @@ class BlogPost extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'SEO Blog Post',
-            'description' => 'Inject SEO Fields of blog post'
+            'name'        => 'anandpatel.seoextension::lang.component.blog.name',
+            'description' => 'anandpatel.seoextension::lang.component.blog.description'
         ];
     }
 
@@ -27,8 +27,8 @@ class BlogPost extends ComponentBase
     {
         return [
             "post" => [
-                    "title" => "data",
-                    "default" => "post"
+                "title" => "data",
+                "default" => "post"
             ]
         ];
     }

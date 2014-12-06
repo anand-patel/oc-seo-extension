@@ -21,8 +21,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'SEO Extension',
-            'description' => 'Provide SEO Extension to October CMS Pages, Static Pages, Blog post',
+            'name'        => 'anandpatel.seoextension::lang.plugin.name',
+            'description' => 'anandpatel.seoextension::lang.plugin.description',
             'author'      => 'AnandPatel',
             'icon'        => 'icon-search'
         ];
@@ -42,8 +42,8 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'       => 'SEO Extension',
-                'description' => 'Configure SEO Extension',
+                'label'       => 'anandpatel.seoextension::lang.settings.label',
+                'description' => 'anandpatel.seoextension::lang.settings.description',
                 'icon'        => 'icon-search',
                 'context'     => 'mysettings',
                 'category'    =>  SettingsManager::CATEGORY_MYSETTINGS,

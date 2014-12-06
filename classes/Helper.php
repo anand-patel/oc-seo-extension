@@ -76,8 +76,6 @@ class Helper {
             if($settings->og_sitename)
                 $ogTags  .= '<meta property="og:site_name" content="'.$settings->og_sitename .'" />'."\n" ;
 
-
-
             if($post->seo_description)
                 $ogTags  .= '<meta property="og:description" content="'.$post->seo_description.'" />'."\n" ;
 
@@ -88,10 +86,9 @@ class Helper {
 
             $ogTags .= '<meta property="og:url" content="'. $ogUrl .'" />';
 
-
             return $ogTags;
         }
     }
 
 
-} 
+}
