@@ -31,8 +31,8 @@ class CmsPage extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'SEO CMS Page',
-            'description' => 'Inject SEO Fields of CMS pages'
+            'name'        => 'anandpatel.seoextension::lang.component.cms.name',
+            'description' => 'anandpatel.seoextension::lang.component.cms.description'
         ];
     }
 

@@ -30,8 +30,8 @@ class StaticPage extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'SEO Static Page',
-            'description' => 'Inject SEO fields of Static Pages'
+            'name'        => 'anandpatel.seoextension::lang.component.static.name',
+            'description' => 'anandpatel.seoextension::lang.component.static.description'
         ];
     }
 
