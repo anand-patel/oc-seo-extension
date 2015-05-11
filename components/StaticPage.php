@@ -43,6 +43,11 @@ class StaticPage extends ComponentBase
     public function onRun()
     {
         $url = Request::path();
+
+        // Remove language prefix in case it exists (e.g. from "/en/my-page" to "/my-page")
+        if (class_exists('RainLab\Translate\Behaviors\TranslatableModel'))
+            $url = substr($url, 3);
+
         if (!strlen($url))
             $url = '/';
 
