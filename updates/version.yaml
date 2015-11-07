@@ -7,3 +7,5 @@
       - Backend Settings added to configure meta tags & Open Graph tags added
 1.0.4:
       - code clean up and change path naming in settings model
+1.0.5:
+      - Added dependency on RainLab.Blog plugin 

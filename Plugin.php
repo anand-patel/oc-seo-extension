@@ -12,6 +12,7 @@ use AnandPatel\SeoExtension\classes\Helper;
  */
 class Plugin extends PluginBase
 {
+  public $require = ['RainLab.Blog'];
 
     /**
      * Returns information about this plugin.
