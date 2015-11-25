@@ -2,8 +2,10 @@
       - First version of Seo Extension
       - create_blog_posts_table.php
 1.0.2:
-      - bug fixes
+      - Bug fixes
 1.0.3:
       - Backend Settings added to configure meta tags & Open Graph tags added
 1.0.4:
-      - code clean up and change path naming in settings model
+      - Code clean up and change path naming in settings model
+1.0.5:
+      - Add Turkish and Russian locale
