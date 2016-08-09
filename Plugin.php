@@ -45,7 +45,6 @@ class Plugin extends PluginBase
                 'label'       => 'anandpatel.seoextension::lang.settings.label',
                 'description' => 'anandpatel.seoextension::lang.settings.description',
                 'icon'        => 'icon-search',
-                'context'     => 'mysettings',
                 'category'    =>  SettingsManager::CATEGORY_MYSETTINGS,
                 'class'       => 'AnandPatel\SeoExtension\Models\Settings',
                 'order'       => 100
