@@ -8,6 +8,9 @@ return [
     'settings' => [
         'label' => 'SEO Extension',
         'description' => 'Configure SEO Extension',
+        'permissions' => [
+            'settings_edit' => 'Configure SEO Extension'
+        ],
         'tab_settings' => [
             'label' => 'Settings',
             'site' => 'Use site name in title',

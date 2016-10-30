@@ -46,6 +46,7 @@ class Plugin extends PluginBase
                 'description' => 'anandpatel.seoextension::lang.settings.description',
                 'icon'        => 'icon-search',
                 'category'    =>  SettingsManager::CATEGORY_MYSETTINGS,
+                'permissions' => ['anandpatel.seoextension.settings.edit'],
                 'class'       => 'AnandPatel\SeoExtension\Models\Settings',
                 'order'       => 100
             ]
@@ -61,6 +62,16 @@ class Plugin extends PluginBase
                 'generateCanonicalUrl' => [$this, 'generateCanonicalUrl'],
                 'otherMetaTags' => [$this ,'otherMetaTags'],
                 'generateOgTags' => [$this,'generateOgTags']
+            ]
+        ];
+    }
+
+    public function registerPermissions()
+    {
+        return [
+            'anandpatel.seoextension.settings.edit' => [
+                'label' => 'anandpatel.seoextension::lang.settings.permissions.settings_edit',
+                'tab' => 'anandpatel.seoextension::lang.plugin.name'
             ]
         ];
     }
