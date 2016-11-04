@@ -14,6 +14,11 @@ class Plugin extends PluginBase
 {
 
     /**
+     * @var array   Require the RainLab.Blog plugin
+     */
+    public $require = ['RainLab.Blog'];
+    
+    /**
      * Returns information about this plugin.
      *
      * @return array
