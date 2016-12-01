@@ -101,12 +101,12 @@ class Plugin extends PluginBase
             if (PluginManager::instance()->hasPlugin('RainLab.Pages') && $widget->model instanceof \RainLab\Pages\Classes\Page) {
                 $widget->addFields([
                         'viewBag[seo_title]' => [
-                        'label'   => 'cms::lang.editor.meta_title',
+                        'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
                         'type'    => 'text',
                         'tab'     => 'cms::lang.editor.meta'
                         ],
                         'viewBag[seo_description]' => [
-                            'label'   => 'cms::lang.editor.meta_description',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_description',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'cms::lang.editor.meta'
@@ -153,12 +153,12 @@ class Plugin extends PluginBase
             if (PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof \RainLab\Blog\Models\Post) {
                 $widget->addFields([
                         'seo_title' => [
-                            'label'   => 'cms::lang.editor.meta_title',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
                             'type'    => 'text',
                             'tab'     => 'SEO'
                         ],
                         'seo_description' => [
-                            'label'   => 'cms::lang.editor.meta_description',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_description',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'SEO'

@@ -4,6 +4,8 @@
         'description' => 'Provide SEO Extension to October CMS Pages, Static Pages, Blog post',
     ],
     'editor' => [
+        'meta_title' => 'Meta Title for SEO Extension',
+        'meta_description' => 'Meta Description for SEO Extension',
         'meta_keywords' => 'Meta Keywords',
         'canonical_url' => 'Canonical URL',
         'redirect_url' => 'Redirect URL',

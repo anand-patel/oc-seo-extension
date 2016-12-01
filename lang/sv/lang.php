@@ -1,11 +1,20 @@
 <?php return [
     'plugin' => [
-        'name' => 'Sökmotorsoptimering',
-        'description' => 'Erbjuder sökmotorsoptimering till October CMS Pages, Static Pages och Blog',
+        'name' => 'Sökmotoroptimering',
+        'description' => 'Erbjuder sökmotoroptimering till October CMS Pages, Static Pages och Blog',
+    ],
+    'editor' => [
+        'meta_title' => 'Meta-titel för sökmotoroptimering',
+        'meta_description' => 'Meta-beskrivning för sökmotoroptimering',
+        'meta_keywords' => 'Meta-nyckelord',
+        'canonical_url' => 'Kanonisk URL',
+        'redirect_url' => 'Ompeka URL',
+        'robot_index' => 'Robotindexering',
+        'robot_follow' => 'Robotföljning',
     ],
     'settings' => [
-        'label' => 'Sökmotorsoptimering',
-        'description' => 'Konfigurera sökmotorsoptimering',
+        'label' => 'Sökmotoroptimering',
+        'description' => 'Konfigurera sökmotoroptimering',
         'tab_settings' => [
             'label' => 'Inställningar',
             'site' => 'Använd sajtnamn i titeln',
