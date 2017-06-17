@@ -1,9 +1,16 @@
-<?php
-
-return [
+<?php return [
     'plugin' => [
-        'name' =>  'SEO Extension',
-        'description' => 'Provide SEO Extension to October CMS Pages, Static Pages, Blog post'
+        'name' => 'SEO Extension',
+        'description' => 'Provide SEO Extension to October CMS Pages, Static Pages, Blog post',
+    ],
+    'editor' => [
+        'meta_title' => 'Meta Title for SEO Extension',
+        'meta_description' => 'Meta Description for SEO Extension',
+        'meta_keywords' => 'Meta Keywords',
+        'canonical_url' => 'Canonical URL',
+        'redirect_url' => 'Redirect URL',
+        'robot_index' => 'Robot Index',
+        'robot_follow' => 'Robot Follow',
     ],
     'settings' => [
         'label' => 'SEO Extension',
@@ -36,21 +43,21 @@ return [
             'sitename' => 'Site name for Open Graph',
             'sitename_comment' => 'The name of your website. Not the URL, but the name. (i.e. "SEO Extension" not "seoextension.com".)',
             'fb' => 'Facebook App Id',
-            'fb_comment' => 'The unique ID that lets Facebook know the identity of your site.'
+            'fb_comment' => 'The unique ID that lets Facebook know the identity of your site.',
         ],
     ],
     'component' => [
         'blog' => [
             'name' => 'SEO Blog Post',
-            'description' => 'Inject SEO Fields of blog post'
+            'description' => 'Inject SEO Fields of blog post',
         ],
         'cms' => [
             'name' => 'SEO CMS Page',
-            'description' => 'Inject SEO Fields of CMS pages'
+            'description' => 'Inject SEO Fields of CMS pages',
         ],
         'static' => [
             'name' => 'SEO Static Page',
-            'description' => 'Inject SEO fields of Static Pages'
-        ]
-    ]
+            'description' => 'Inject SEO fields of Static Pages',
+        ],
+    ],
 ];

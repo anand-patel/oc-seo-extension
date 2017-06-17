@@ -1,11 +1,11 @@
-<?php namespace AnandPatel\SeoExtension;
+<?php namespace anandpatel\seoextension;
 
-use System\Classes\PluginBase;
+use AnandPatel\SeoExtension\classes\Helper;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
+use System\Classes\PluginBase;
 use System\Classes\PluginManager;
 use System\Classes\SettingsManager;
-use AnandPatel\SeoExtension\classes\Helper;
 
 /**
  * SeoExtension Plugin Information File
@@ -51,7 +51,6 @@ class Plugin extends PluginBase
                 'order'       => 100
             ]
         ];
-
     }
 
     public function registerMarkupTags()
@@ -109,45 +108,41 @@ class Plugin extends PluginBase
 
     public function register()
     {
-
-        \Event::listen('backend.form.extendFields', function($widget)
-        {
-
-            if(PluginManager::instance()->hasPlugin('RainLab.Pages') && $widget->model instanceof \RainLab\Pages\Classes\Page)
-            {
+        \Event::listen('backend.form.extendFields', function ($widget) {
+            if (PluginManager::instance()->hasPlugin('RainLab.Pages') && $widget->model instanceof \RainLab\Pages\Classes\Page) {
                 $widget->addFields([
                         'viewBag[seo_title]' => [
-                        'label'   => 'Meta Title',
+                        'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
                         'type'    => 'text',
                         'tab'     => 'cms::lang.editor.meta'
                         ],
                         'viewBag[seo_description]' => [
-                            'label'   => 'Meta Description',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_description',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'cms::lang.editor.meta'
                         ],
                         'viewBag[seo_keywords]' => [
-                            'label'   => 'Meta Keywords',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_keywords',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'cms::lang.editor.meta'
                         ],
                         'viewBag[canonical_url]' => [
-                            'label'   => 'Canonical URL',
+                            'label'   => 'anandpatel.seoextension::lang.editor.canonical_url',
                             'type'    => 'text',
                             'tab'     => 'cms::lang.editor.meta',
                             'span'    => 'left'
                         ],
                         'viewBag[redirect_url]' => [
-                            'label'   => 'Redirect URL',
+                            'label'   => 'anandpatel.seoextension::lang.editor.redirect_url',
                             'type'    => 'text',
                             'tab'     => 'cms::lang.editor.meta',
                             'span'    => 'right'
 
                         ],
                         'viewBag[robot_index]' => [
-                            'label'   => 'Robot Index',
+                            'label'   => 'anandpatel.seoextension::lang.editor.robot_index',
                             'type'    => 'dropdown',
                             'tab'     => 'cms::lang.editor.meta',
                             'options' => $this->getIndexOptions(),
@@ -155,7 +150,7 @@ class Plugin extends PluginBase
                             'span'    => 'left'
                         ],
                         'viewBag[robot_follow]' => [
-                            'label'   => 'Robot Follow',
+                            'label'   => 'anandpatel.seoextension::lang.editor.robot_follow',
                             'type'    => 'dropdown',
                             'tab'     => 'cms::lang.editor.meta',
                             'options' => $this->getFollowOptions(),
@@ -166,41 +161,40 @@ class Plugin extends PluginBase
                 'primary');
             }
 
-            if(PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof \RainLab\Blog\Models\Post)
-            {
+            if (PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof \RainLab\Blog\Models\Post) {
                 $widget->addFields([
                         'seo_title' => [
-                            'label'   => 'Meta Title',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
                             'type'    => 'text',
                             'tab'     => 'SEO'
                         ],
                         'seo_description' => [
-                            'label'   => 'Meta Description',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_description',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'SEO'
                         ],
                         'seo_keywords' => [
-                            'label'   => 'Meta Keywords',
+                            'label'   => 'anandpatel.seoextension::lang.editor.meta_keywords',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'SEO'
                         ],
                         'canonical_url' => [
-                            'label'   => 'Canonical URL',
+                            'label'   => 'anandpatel.seoextension::lang.editor.canonical_url',
                             'type'    => 'text',
                             'tab'     => 'SEO',
                             'span'    => 'left'
                         ],
                         'redirect_url' => [
-                            'label'   => 'Redirect URL',
+                            'label'   => 'anandpatel.seoextension::lang.editor.redirect_url',
                             'type'    => 'text',
                             'tab'     => 'SEO',
                             'span'    => 'right'
 
                         ],
                         'robot_index' => [
-                            'label'   => 'Robot Index',
+                            'label'   => 'anandpatel.seoextension::lang.editor.robot_index',
                             'type'    => 'dropdown',
                             'tab'     => 'SEO',
                             'options' => $this->getIndexOptions(),
@@ -208,7 +202,7 @@ class Plugin extends PluginBase
                             'span'    => 'left'
                         ],
                         'robot_follow' => [
-                            'label'   => 'Robot Follow',
+                            'label'   => 'anandpatel.seoextension::lang.editor.robot_follow',
                             'type'    => 'dropdown',
                             'tab'     => 'SEO',
                             'options' => $this->getFollowOptions(),
@@ -219,7 +213,9 @@ class Plugin extends PluginBase
                     'secondary');
             }
 
-            if (!$widget->model instanceof \Cms\Classes\Page) return;
+            if (!$widget->model instanceof \Cms\Classes\Page) {
+                return;
+            }
 
             if (!($theme = Theme::getEditTheme())) {
                 throw new ApplicationException(Lang::get('cms::lang.theme.edit.not_found'));
@@ -228,27 +224,27 @@ class Plugin extends PluginBase
             $widget->addFields(
                 [
                     'settings[seo_keywords]' => [
-                        'label'   => 'Meta Keywords',
+                        'label'   => 'anandpatel.seoextension::lang.editor.meta_keywords',
                         'type'    => 'textarea',
                         'tab'     => 'cms::lang.editor.meta',
                         'size'    => 'tiny',
                         'placeholder' => "hello"
                     ],
                     'settings[canonical_url]' => [
-                        'label'   => 'Canonical URL',
+                        'label'   => 'anandpatel.seoextension::lang.editor.canonical_url',
                         'type'    => 'text',
                         'tab'     => 'cms::lang.editor.meta',
                         'span'    => 'left'
                     ],
                     'settings[redirect_url]' => [
-                        'label'   => 'Redirect URL',
+                        'label'   => 'anandpatel.seoextension::lang.editor.redirect_url',
                         'type'    => 'text',
                         'tab'     => 'cms::lang.editor.meta',
                         'span'    => 'right'
 
                     ],
                     'settings[robot_index]' => [
-                        'label'   => 'Robot Index',
+                        'label'   => 'anandpatel.seoextension::lang.editor.robot_index',
                         'type'    => 'dropdown',
                         'tab'     => 'cms::lang.editor.meta',
                         'options' => $this->getIndexOptions(),
@@ -256,7 +252,7 @@ class Plugin extends PluginBase
                         'span'    => 'left'
                     ],
                     'settings[robot_follow]' => [
-                        'label'   => 'Robot Follow',
+                        'label'   => 'anandpatel.seoextension::lang.editor.robot_follow',
                         'type'    => 'dropdown',
                         'tab'     => 'cms::lang.editor.meta',
                         'options' => $this->getFollowOptions(),
@@ -279,5 +275,4 @@ class Plugin extends PluginBase
     {
         return ["follow"=>"follow","nofollow"=>"nofollow"];
     }
-
 }
