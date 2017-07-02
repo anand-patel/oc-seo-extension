@@ -46,6 +46,8 @@
             'fb_comment' => 'The unique ID that lets Facebook know the identity of your site.',
             'image' => 'Image',
             'image_comment' => 'Absolute image URL which should represent your object within the graph.',
+            'type' => 'Website type',
+            'type_comment' => 'Website type descriped here http://ogp.me/#types.',
         ],
     ],
     'component' => [

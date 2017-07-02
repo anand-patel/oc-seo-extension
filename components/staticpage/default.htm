@@ -49,3 +49,7 @@
 {% if __SELF__.ogImage %}
 <meta property="og:image" content="{{ __SELF__.ogImage  }}">
 {% endif %}
+
+{% if __SELF__.ogType %}
+<meta property="og:type" content="{{ __SELF__.ogType  }}">
+{% endif %}

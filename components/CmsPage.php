@@ -26,7 +26,7 @@ class CmsPage extends ComponentBase
     public $ogFbAppId;
     public $ogLocale;
     public $ogImage;
-
+    public $ogType;
 
     public function componentDetails()
     {
@@ -67,6 +67,7 @@ class CmsPage extends ComponentBase
                 $this->ogSiteName = $settings->og_sitename;
                 $this->ogFbAppId = $settings->og_fb_appid;
                 $this->ogImage = $settings->og_image;
+                $this->ogType = $settings->og_type;
             }
 
         }

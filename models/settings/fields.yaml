@@ -74,3 +74,10 @@ tabs:
       type: text
       span: right
       tab: anandpatel.seoextension::lang.settings.tab_og.label
+    
+    og_type:
+      label: anandpatel.seoextension::lang.settings.tab_og.type
+      comment: anandpatel.seoextension::lang.settings.tab_og.type_comment
+      type: text
+      span: left
+      tab: anandpatel.seoextension::lang.settings.tab_og.label
