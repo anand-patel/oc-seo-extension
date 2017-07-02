@@ -1,7 +1,7 @@
 {% put meta %}
 {% default %}
     {% if post.redirect_url %}
-        <meta http-equiv="refresh" content="0; url={{post.redirect_url}}" />
+        <meta http-equiv="refresh" content="0; url={{post.redirect_url}}">
     {% endif %}
 
     {% if post.seo_title %}
@@ -19,7 +19,7 @@
     {% endif %}
 
     {% if post.canonical_url %}
-        <link rel="canonical" href="{{post.canonical_url}}" />
+        <link rel="canonical" href="{{post.canonical_url}}">
     {% else %}
         {{ '' | generateCanonicalUrl}}
     {% endif %}
