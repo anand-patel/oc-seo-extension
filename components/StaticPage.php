@@ -70,9 +70,10 @@ class StaticPage extends ComponentBase
             {
                 $this->ogTitle = empty($this->page->meta_title) ? $this->page->title : $this->page->meta_title;
                 $this->ogDescription = $this->page->meta_description;
-                $this->ogUrl = empty($this->page->canonical_url) ? Request::url() : $this->page->canonical_url ;
+                $this->ogUrl = empty($this->page->canonical_url) ? Request::url() : $this->page->canonical_url;
                 $this->ogSiteName = $settings->og_sitename;
                 $this->ogFbAppId = $settings->og_fb_appid;
+                $this->ogImage = $settings->og_image;
             }
         }
 

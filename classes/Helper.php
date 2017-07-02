@@ -73,6 +73,9 @@ class Helper {
             if($settings->og_fb_appid)
                 $ogTags  .= '<meta property="fb:app_id" content="'.$settings->og_fb_appid.'">' ."\n" ;
 
+            if($settings->og_image)
+                $ogTags  .= '<meta property="og:image" content="'.$settings->og_image.'">' ."\n" ;
+
             if($settings->og_sitename)
                 $ogTags  .= '<meta property="og:site_name" content="'.$settings->og_sitename .'">'."\n" ;
 

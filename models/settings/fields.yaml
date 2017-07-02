@@ -68,9 +68,9 @@ tabs:
       span: left
       tab: anandpatel.seoextension::lang.settings.tab_og.label
 
-
-
-
-
-
-
+    og_image:
+      label: anandpatel.seoextension::lang.settings.tab_og.image
+      comment: anandpatel.seoextension::lang.settings.tab_og.image_comment
+      type: text
+      span: right
+      tab: anandpatel.seoextension::lang.settings.tab_og.label

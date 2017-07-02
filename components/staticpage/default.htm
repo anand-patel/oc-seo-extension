@@ -45,3 +45,7 @@
 {% if __SELF__.ogFbAppId %}
 <meta property="fb:app_id" content="{{ __SELF__.ogFbAppId  }}">
 {% endif %}
+
+{% if __SELF__.ogImage %}
+<meta property="og:image" content="{{ __SELF__.ogImage  }}">
+{% endif %}

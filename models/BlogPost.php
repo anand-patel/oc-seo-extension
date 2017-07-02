@@ -33,7 +33,6 @@ class BlogPost extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
     public $attachMany = [];
 
 }
