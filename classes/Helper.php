@@ -80,7 +80,7 @@ class Helper {
                 $ogTags  .= '<meta property="og:description" content="'.$post->seo_description.'" />'."\n" ;
 
             $ogTitle = empty($post->meta_title) ? $post->title : $post->meta_title;
-            $ogUrl = empty($post->canonical_url) ? Request::url() : $this->page->canonical_url ;
+            $ogUrl = empty($post->canonical_url) ? Request::url() : $post->canonical_url ;
 
             $ogTags .= '<meta property="og:title" content="'. $ogTitle .'" />'."\n" ;
 
