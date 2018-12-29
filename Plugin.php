@@ -109,6 +109,9 @@ class Plugin extends PluginBase
     public function register()
     {
         \Event::listen('backend.form.extendFields', function ($widget) {
+            if ($widget->isNested) {
+                return;
+            }
             if (PluginManager::instance()->hasPlugin('RainLab.Pages') && $widget->model instanceof \RainLab\Pages\Classes\Page) {
                 $widget->addFields([
                         'viewBag[seo_title]' => [
