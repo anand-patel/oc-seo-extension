@@ -12,6 +12,12 @@ use System\Classes\SettingsManager;
  */
 class Plugin extends PluginBase
 {
+    
+    /**
+     * @var array Plugin dependencies
+     */
+    public $require = ['Rainlab.Blog'];
+    
 
     /**
      * Returns information about this plugin.
