@@ -110,6 +110,8 @@ class Plugin extends PluginBase
     {
         \Event::listen('backend.form.extendFields', function ($widget) {
             if (PluginManager::instance()->hasPlugin('RainLab.Pages') && $widget->model instanceof \RainLab\Pages\Classes\Page) {
+                if ($widget->isNested) { return; }
+                
                 $widget->addFields([
                         'viewBag[seo_title]' => [
                         'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
@@ -162,6 +164,8 @@ class Plugin extends PluginBase
             }
 
             if (PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof \RainLab\Blog\Models\Post) {
+                if ($widget->isNested) { return; }
+                
                 $widget->addFields([
                         'seo_title' => [
                             'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
@@ -220,7 +224,9 @@ class Plugin extends PluginBase
             if (!($theme = Theme::getEditTheme())) {
                 throw new ApplicationException(Lang::get('cms::lang.theme.edit.not_found'));
             }
-
+    
+            if ($widget->isNested) { return; }
+                
             $widget->addFields(
                 [
                     'settings[seo_keywords]' => [
