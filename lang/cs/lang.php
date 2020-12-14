@@ -50,4 +50,21 @@ return [
             'description' => 'Přidá SEO pole k statické stránce',
         ],
     ],
+    'help' => [
+        'other_tags_hint' => 'In other meta tags you can insert meta tags that is comman to all pages.<br>
+            you can insert meta tags like meta author, meta view port or any tag that you want to place in head section.',
+        'og_tags_description' => '<b>What is Open Graph?</b>
+            <br/>
+            The Open Graph protocol enables any web page to become a rich object in a social graph.
+            <br/>
+            <br/>
+            Currently included Open Graph tags are(other tags will be added soon):
+            <ul>
+                <li>fb:app_id</li>
+                <li>og:site_name</li>
+                <li>og:title</li>
+                <li>og:url</li>
+                <li>og:description</li>
+            </ul>'
+    ]
 ];
